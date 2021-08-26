@@ -21,13 +21,12 @@ public class LightsOut implements MouseListener {
 	public LightsOut() {
 
 		/** PART 1. CREATE YOUR LIGHT BOARD **/
-		// a. create a basic UI and add 25 JLabels (these are your lights)
-		// - change the layout of your panel to a 5x5 grid:
-		// - panel.setLayout(new GridLayout(5, 5));
+		// a. Create a frame, panel, and add 25 JLabels (these are your lights)
+		// - Make your panel a 5x5 grid with panel.setLayout(new GridLayout(5, 5));
 
-		// b. use setText() to add a position number to each light (0-24).
+		// b. Use setText() to add a position number to each light (0-24).
 
-		// c. set the background of each label to LIGHT_GRAY
+		// c. Set the background of each light to LIGHT_GRAY
 		// - you will also have to set the background to opaque.
 		// - Use light.setOpaque(true);
 
