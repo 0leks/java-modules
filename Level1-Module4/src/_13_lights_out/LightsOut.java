@@ -3,6 +3,7 @@ package _13_lights_out;
 import java.awt.Color;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -18,58 +19,66 @@ import javax.swing.JPanel;
  */
 public class LightsOut implements MouseListener {
 
+	JPanel gamePanel = new JPanel();
+
 	public LightsOut() {
 
 		/** PART 1. CREATE YOUR LIGHT BOARD **/
-		// a. Create a frame, panel, and add 25 JLabels (these are your lights)
-		// - Make your panel a 5x5 grid with panel.setLayout(new GridLayout(5, 5));
+		//1. Make your gamePanel a 5x5 grid with setLayout(new GridLayout(5, 5));
+		
+		{
+			//2. Add 25 JLabels to your gamePanel (these are your lights)
 
-		// b. Use setText() to add a position number to each light (0-24).
+			//3. Use setText() to add a position number to each light (0-24).
 
-		// c. Set the background of each light to LIGHT_GRAY
-		// - you will also have to set the background to opaque.
-		// - Use light.setOpaque(true);
+			//4. Set the background of each light to LIGHT_GRAY
+			// - you will also have to set the background to opaque.
+			// - Use light.setOpaque(true);
 
-		// d. add a mouseListener to each light
+			//5. Add a mouseListener to each light
+		}
+		
+		//6. Add your panel to a frame
+
+		//7. Set the size of the frame
+
 	}
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		/** PART 2: TOGGLE NEIGHBORING LIGHTS **/
-		// a. get the light that was clicked on `(JLabel) e.getSource`
+		// 1. Get the light that was clicked on `(JLabel) e.getSource`
 
-		// b. get the number of the light
+		// 2. Get the number (position) of the light
 
-		// c. Now use the makeMove method to code which lights turn on and off.
+		// 3. Now use the makeMove method to code which lights turn on and off.
 
-		// e. check if the player has won (e.g. all the lights are off)
+		// 4.Check if the player has won (e.g. all the lights are off)
 		// ---- HINT: use `getLightAtPosition` to get the light at each position
 
 		/** PART 3: RANDOMIZE YOUR BOARD **/
-		// a. Go back to the constructor and randomize your board
+		// Now that your game works can you make the game start with some lights on?
 
-		// b. To ensure the puzzle is solvable make a series of random moves on the
-		// light board.
 	}
 
-	void makeMove(JPanel lightPanel, int pos) {
-		toggle((JLabel) lightPanel.getComponent(pos));
+	void makeMove(int pos) {
+		toggle((JLabel) gamePanel.getComponent(pos));
 		if (pos >= 5) {
-			toggle((JLabel) lightPanel.getComponent(pos - 5));
+			toggle((JLabel) gamePanel.getComponent(pos - 5));
 		}
 		if ((pos + 1) % 5 != 0) {
-			toggle((JLabel) lightPanel.getComponent(pos + 1));
+			toggle((JLabel) gamePanel.getComponent(pos + 1));
 		}
 		if (pos % 5 != 0) {
-			toggle((JLabel) lightPanel.getComponent(pos - 1));
+			toggle((JLabel) gamePanel.getComponent(pos - 1));
 		}
 		if (pos + 5 <= 24) {
-			toggle((JLabel) lightPanel.getComponent(pos + 5));
+			toggle((JLabel) gamePanel.getComponent(pos + 5));
 		}
 	}
 
-	JPanel getLightAtPosition(JPanel panel, int lightPosition) {
-		return (JPanel) panel.getComponent(lightPosition);
+	JLabel getLightAtPosition(int lightPosition) {
+		return (JLabel) gamePanel.getComponent(lightPosition);
 	}
 
 	void toggle(JLabel label) {
