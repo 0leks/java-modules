@@ -26,7 +26,7 @@ public class LightsOut implements MouseListener {
 		/** PART 1. CREATE YOUR LIGHT BOARD **/
 		//1. Make your gamePanel a 5x5 grid with setLayout(new GridLayout(5, 5));
 		
-		{
+		
 			//2. Add 25 JLabels to your gamePanel (these are your lights)
 
 			//3. Use setText() to add a position number to each light (0-24).
@@ -36,7 +36,7 @@ public class LightsOut implements MouseListener {
 			// - Use light.setOpaque(true);
 
 			//5. Add a mouseListener to each light
-		}
+		
 		
 		//6. Add your panel to a frame
 
@@ -55,6 +55,7 @@ public class LightsOut implements MouseListener {
 
 		// 4.Check if the player has won (e.g. all the lights are off)
 		// ---- HINT: use `getLightAtPosition` to get the light at each position
+		// ---------- use 'getBackground' to get the light color
 
 		/** PART 3: RANDOMIZE YOUR BOARD **/
 		// Now that your game works can you make the game start with some lights on?
