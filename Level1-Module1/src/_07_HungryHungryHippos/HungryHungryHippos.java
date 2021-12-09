@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Random;
 
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 import game_tools.Game;
@@ -55,7 +54,7 @@ public class HungryHungryHippos implements GameScene, GameControlScene {
      */
     Color bgColor = new Color(100, 150, 50);
     Color boardColor = new Color(138, 198, 193);
-    Game gameFrame = new Game();
+    Game gameFrame = new Game("Hungry Hungry Hippos");
     boolean startGame = false;
 
     /*
@@ -65,8 +64,6 @@ public class HungryHungryHippos implements GameScene, GameControlScene {
     Hippo myHippoObject = new Hippo("left");
 
     public HungryHungryHippos() {
-        JFrame frame = gameFrame.getFrame();
-        frame.setTitle("Hungry Hungry Hippos");
         gameFrame.setScene(this);
         gameFrame.start();
         gameFrame.setSize(GAME_WIDTH, GAME_HEIGHT);
