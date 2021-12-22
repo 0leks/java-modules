@@ -36,7 +36,7 @@ public class TooManyShapes {
 	}
 	
 	static int calculateTurnAngle(int numSides) {
-		int angle = 180-(((numSides-2)*180)/numSides);
+		int angle = 360/numSides;
 		return angle;
 	}
 	
@@ -56,10 +56,10 @@ public class TooManyShapes {
 			rob.setAngle(angle);
 			rob.setRandomPenColor();
 			
-	    	for(int j = 0; j < numSides; j++) {
+			for(int j = 0; j < numSides; j++) {
 	    		rob.move(dist);
 	    		rob.turn(degrees);
-	    	}
+			}
 	    }
 		rob.hide();
 	}
